@@ -1,0 +1,13 @@
+Windows
+---------------------------
+# first need use cygwin do
+verilator --sc top.v t.v --trace
+cd obj_dir
+/usr/bin/perl /usr/local/bin/verilator_includer -DVL_INCLUDE_OPT=include Vtop.cpp > Vtop__ALLcls.cpp
+/usr/bin/perl /usr/local/bin/verilator_includer -DVL_INCLUDE_OPT=include Vtop__Trace.cpp Vtop__Syms.cpp Vtop__Trace__Slow.cpp > Vtop__ALLsup.cpp
+# call qtcreator
+use .pro file to build simulation executable
+
+Linux & Cygwin
+----------------------------
+Just type make
